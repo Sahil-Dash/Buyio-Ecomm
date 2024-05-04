@@ -96,8 +96,9 @@ export const createPaymentIntent: PayloadHandler = async (req, res): Promise<voi
     const paymentIntent = await stripe.paymentIntents.create({
       customer: stripeCustomerID,
       amount: total,
-      currency: 'usd',
+      currency: 'inr',
       payment_method_types: ['card'],
+      description: "Software development services"
     })
 
     res.send({ client_secret: paymentIntent.client_secret })

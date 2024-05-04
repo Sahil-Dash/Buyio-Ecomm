@@ -36,6 +36,7 @@ export const CheckoutForm: React.FC<{}> = () => {
 
         if (stripeError) {
           setError(stripeError.message)
+          console.log("stripe error...")
           setIsLoading(false)
         }
 
